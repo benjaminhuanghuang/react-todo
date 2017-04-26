@@ -1,5 +1,6 @@
  export const addTodo = (list, item) => {
     //list.push(item)
-    list.concat(item)
-    return list
+    //return list       // Failed on test2
+    
+    return [...list, item]   // equals to return list.concat(item)
  }
