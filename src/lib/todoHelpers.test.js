@@ -1,4 +1,4 @@
-import {addTodo, findById} from './todoHelpers'
+import {addTodo, findById, toggleTodo, updateTodo} from './todoHelpers'
 
 test('addTodo should add the passed todo to the list', ()=>{
     const startTodos =[
@@ -50,16 +50,49 @@ test('findById should return the expected item from an array', ()=>{
     expect(result).toEqual(expected)
 })
 
-test.skip('toggleTodo should toggle the isComplete prop of a todo', ()=>{
-     expect(1).toEqual(1)
+test('toggleTodo should toggle the isComplete prop of a todo', ()=>{
+    const startTodo = {id:2, name:"two", isComplete:false}
+    const expected =  {id:2, name:"two", isComplete:true}
+    const result = toggleTodo(startTodo)
+    expect(result).toEqual(expected)
 })
 
-test.skip('toggleTodo should not mutate the original todo', ()=>{
+test('toggleTodo should not mutate the original todo', ()=>{
+    const startTodo = {id:2, name:"two", isComplete:false}
+    const result = toggleTodo(startTodo)
+    expect(result).not.toBe(startTodo)
 })
 
-test.skip('updateTodo should update an item by Id', ()=>{
+test('updateTodo should update an item by Id', ()=>{
+    const startTodos =[
+        {id:1, name:"one", isComplete:false},
+        {id:2, name:"two", isComplete:false},
+        {id:3, name:"three", isComplete:false}
+    ]
+
+    const updatedTodo = {id:2, name:"two", isComplete:true}
+
+    const expected =[
+        {id:1, name:"one", isComplete:false},
+        {id:2, name:"two", isComplete:true},
+        {id:3, name:"three", isComplete:false}
+    ]
+
+    const result = updateTodo(startTodos, updatedTodo)
+
+    expect(result).toEqual(expected)
 })
 
-test.skip('updateTodo should  should not mutate the original array', ()=>{
+test('updateTodo should  should not mutate the original array', ()=>{
+    const startTodos =[
+        {id:1, name:"one", isComplete:false},
+        {id:2, name:"two", isComplete:false},
+        {id:3, name:"three", isComplete:false}
+    ]
 
+    const updatedTodo = {id:2, name:"two", isComplete:true}
+
+    const result = updateTodo(startTodos, updatedTodo)
+
+    expect(result).not.toBe(startTodos)
 })
