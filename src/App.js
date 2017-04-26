@@ -30,7 +30,7 @@ class App extends Component {
         </div>
           <div className="Todo-App">
             <TodoForm handleInputChange={this.handleInputChange} currentTodo={this.state.currentTodo}></TodoForm>
-            <TodoList todos= {this.state.todos}/>
+            <TodoList todos={this.state.todos}/>
           </div>
       </div>
     );
