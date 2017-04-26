@@ -6,9 +6,8 @@ import {addTodo, generateId} from './lib/todoHelpers'
 
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = {
+  // Property initializer syntax
+  state = {
         currentTodo:'',
         todos:[
           {id:1, name:"Learning JSX", isComplete:true},
@@ -16,17 +15,18 @@ class App extends Component {
           {id:3, name:"Ship It", isComplete:false}
         ]
     }
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleEmptySubmit = this.handleEmptySubmit.bind(this)
-  }
-  handleInputChange(evt){
+
+  // constructor(){
+  //   super()
+  // }
+
+  handleInputChange = (evt)=>{
       this.setState({
         currentTodo: evt.target.value
       });
   }
 
-  handleSubmit(evt){
+  handleSubmit = (evt)=>{
     evt.preventDefault()
     const newId = generateId()
     const newTodo = {id: newId, name:this.state.currentTodo, isComplete:false}
@@ -39,8 +39,7 @@ class App extends Component {
     })  
   }
 
-  handleEmptySubmit(evt)
-  {
+  handleEmptySubmit = (evt) =>{
      evt.preventDefault()
      this.setState(
        {
