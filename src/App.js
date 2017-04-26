@@ -6,7 +6,7 @@ import {addTodo, generateId} from './lib/todoHelpers'
 
 
 class App extends Component {
-  // Property initializer syntax
+  // Property initializer syntax, avoid bind methods to this
   state = {
         currentTodo:'',
         todos:[

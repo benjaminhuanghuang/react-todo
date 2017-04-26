@@ -6,3 +6,5 @@
  }
 
  export const generateId = () => Math.floor(Math.random() * 100000)
+
+ export const findById = (todoId, list) => list.find(item => item.id === todoId)
