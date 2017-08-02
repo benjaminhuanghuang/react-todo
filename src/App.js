@@ -6,7 +6,6 @@ import {addTodo, generateId, findByIe, toggleTodo, updateTodo} from './lib/todoH
 
 
 class App extends Component {
-  // Property initializer syntax, avoid bind methods to this
   state = {
         currentTodo:'',
         todos:[
@@ -19,6 +18,8 @@ class App extends Component {
   // constructor(){
   //   super()
   // }
+
+  // Property initializer syntax, avoid bind methods to this
   handleToggle = (id)=>
   {
     const todo = findByIe(id, this.state.todos)
