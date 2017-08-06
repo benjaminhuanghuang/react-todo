@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+//
 import './App.css';
 import {TodoForm, TodoList} from './components/todo'
 import {addTodo, generateId, findByIe, toggleTodo, updateTodo} from './lib/todoHelpers'
@@ -67,8 +68,9 @@ class App extends Component {
         </div>
           <div className="Todo-App">
             {this.state.errorMessage && <span className="error">{this.state.errorMessage}</span>}
-            <TodoForm handleInputChange={this.handleInputChange} currentTodo={this.state.currentTodo}
-                handleSubmit={submitHandler}></TodoForm>
+            <TodoForm handleInputChange={this.handleInputChange} 
+                      currentTodo={this.state.currentTodo}
+                      handleSubmit={submitHandler}></TodoForm>
             <TodoList todos={this.state.todos} handleToggle={this.handleToggle}/>
           </div>
       </div>
