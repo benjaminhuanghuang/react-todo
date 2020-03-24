@@ -1,2 +1,2 @@
-export {TodoForm} from './TodoForm'
-export {TodoList} from './TodoList'
+export * from './TodoForm'
+export * from './TodoList'
