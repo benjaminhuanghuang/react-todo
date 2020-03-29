@@ -1,5 +1,8 @@
-
-type Todo{
+type Todo = {
   text: string;
-  completed: boolean
-}
+  completed: boolean;
+};
+
+type ToggoleTodo = (selectedTodo: Todo) => void;
+
+type AddTodo = (newTodo:string)=>void;

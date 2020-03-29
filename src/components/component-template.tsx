@@ -2,6 +2,6 @@ import React from "react";
 
 export interface CopmonentProps {}
 
-export const TodoForm: React.SFC<CopmonentProps> = props => {
+export const TodoForm: React.FC<CopmonentProps> = () => {
   return <div></div>;
 };
